@@ -6,7 +6,7 @@
 #####################################################
 
 R2D2_asb = function(REF, BC,
-                    iref=c(1), lag_all=2, keep_lag=1){
+                    iref=c(1), lag_all=0, keep_lag=0){
 
   # Looks for blocks of size lag_all+1
   # Keeps only the keep_lag+1 last values of the block
