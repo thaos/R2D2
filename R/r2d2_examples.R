@@ -1,24 +1,38 @@
-#' data for the r2d2 example
+#' Example data for the r2d2 function
 #'
-#' temperature and precipitation data needed to run the r2d2 example
+#' temperature and precipitation example data to run the r2d2 function
 #'
 #'
 #' @format A list with the following elements:
 #' \describe{
-#'   \item{bc1d}{A matrix with 589 rows and 8334 columns. It contains the data to be corrected by the r2d2 method.}
-#'   \item{refdata}{A matrix with 589 rows and 8334 columns. It contains the reference data. The r2D2 reproduces rank associations observed in this dataset depending on the conditioning dimension values present in in the bc1d dataset to be corrected.}
+#'   \item{bc1d}{A matrix with 589 rows and 10 columns. It contains data previously bias corrected with a univariate BC method.
+#'   Those 1d-BC data have inter-site and inter-variable dependences that are to be corrected by the r2d2 method.}
+#'   \item{refdata}{A matrix with 589 rows and 10 columns. It contains the reference data to correct the bc1d data.
+#'   The r2d2 function resamples rank associations from this dataset, depending on the conditioning dimension values from the bc1d dataset to be corrected.}
 
-#'   For those two matrices, the number of rows corresponds to the number of observations or time-steps. The number of columns corresponds to the numbers of variables to be corrected. The first 4167 columns corresponds to temperature variables at different geographical sites. The following 4167 columns corresponds to precipitaion variables for the same site as for the temperature.
-#'   The reference datasets come from \href{http://www.eu-watch.org/data_availability}{WATCH-Forcing-Data-ERA-Interim}(WFDEI).
-#'   The bc1d datasets to be corrected come from \href{http://cmc.ipsl.fr/international-projects/cmip5/}{the IPSL-CM5A-LR climate model} and have been interpolated to the same grid as WFDEI.
-#'   For those bc1d matrices to be corrected by R2D2, note that the marginal distributions of these datasets have already been corrected by a unidimensional bias correction method (\code{\link[CDFt]{CDFt}}) to have the same properties as the reference dataset. The bc1d datasets have been prepared by \href{https://theclimatedatafactory.com/}{The Climate Data Factory}.
-#'   \item{datesl}{vector of strings with dates used for the two datasets. For this examples, the datasets only consist of days in January during the 1979-1997 period.}
-#'   \item{lon}{numeric vector of length 4167 with the longitudes of the 4167 geopgraphical locations where the simulations of temperarure and precipiation are provided.}
-#'   \item{lat}{numeric vector of length 4167 with the latitudes of the 4167 geopgraphical locations where the simulations of temperarure and precipiation are provided.}
-#'   \item{icond}{vector of integers containings the indices of the closest grid points to the following cities: Paris, Madrid, Rome, Warsaw, Stockholm. Temperature and precipitation at those five location will be used as conditioning dimension in the r2d2 examples. For instance, to have the longitude of the closest grid point closest to Paris, one could type: \code{r2d2_example$lon[r2d2_example$icond["paris"]]}}
+#'   For those two matrices, the number of rows corresponds to the number of time-steps.
+#'   The number of columns corresponds to the numbers of variables to be corrected.
+#'   The first 5 columns correspond to temperatures at the grid points representing respectively Paris, Madrid, Rome, Warsaw and Stockholm.
+#'   The following 5 columns correspond to precipitation at the same geographical sites.
+#'
+#'
+#'   The reference dataset comes from \href{http://www.eu-watch.org/data_availability}{WATCH-Forcing-Data-ERA-Interim} (WFDEI).
+#'   The bc1d dataset comes from simulations of the \href{http://cmc.ipsl.fr/international-projects/cmip5/}{IPSL-CM5A-LR climate model}
+#'   that have been (i) regridded to the same spatial resolution as the reference dataset
+#'   and then (ii) bias-corrected with the univariate BC method CDFt (Michelangeli et al, 2009).
+#'   The bc1d dataset has been prepared by \href{https://theclimatedatafactory.com/}{The Climate Data Factory}.
 #' }
+#'
+#' @source  Weedon, G.P., Balsamo, G., Bellouin, N., Gomes, S., Best, M.J. and Viterbo, P., 2014.
+#' The WFDEI meteorological forcing data set:
+#' WATCH Forcing Data methodology applied to ERA-Interim
+#' reanalysis data. Water Resources Research, 50, doi:10.1002/2014WR015638
+#'
+#' @source Michelangeli, P.A., Vrac, M., and Loukos, H. ( 2009),
+#' Probabilistic downscaling approaches:
+#' Application to wind cumulative distribution functions,
+#' Geophys. Res. Lett., 36, L11708, doi:10.1029/2009GL038401.
 "r2d2_example"
 
 # load(file = "data/r2d2_example.rdata")
-
 

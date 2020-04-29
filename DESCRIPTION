@@ -1,0 +1,22 @@
+Package: R2D2
+Title: R2D2 multivariate correction bias-correction method
+Version: 2.0.0.0000
+Authors@R: c(person("Mathieu", "Vrac", email = "mathieu.vrac@lsce.ipsl.fr", role = c("aut")),
+             person("Soulivanh", "Thao", email = "soulivanh.thao@lsce.ipsl.fr", role = c("cre")))
+Description: This package provides the r2d2 function
+    to perform the multivariate bias-correction method, R2D2, 
+    presented in Vrac(2018)).
+    Vrac, M.: Multivariate bias adjustment of high-dimensional climate simulations:
+    the Rank Resampling for Distributions and Dependences (R2D2) bias correction,
+    Hydrol. Earth Syst. Sci., 22, 3175–3196,
+    https://doi.org/10.5194/hess-22-3175-2018, 2018.
+Depends: R (>= 3.0.0)
+License: CeCILL
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+NeedsCompilation: no
+Packaged: 2020-04-28 10:18:46 UTC; sthao
+Author: Mathieu Vrac [aut],
+  Soulivanh Thao [cre]
+Maintainer: Soulivanh Thao <soulivanh.thao@lsce.ipsl.fr>
