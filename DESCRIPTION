@@ -1,6 +1,6 @@
 Package: R2D2
 Title: R2D2 multivariate correction bias-correction method
-Version: 2.0.0.0000
+Version: 1.0.0.0000
 Authors@R: c(person("Mathieu", "Vrac", email = "mathieu.vrac@lsce.ipsl.fr", role = c("aut")),
              person("Soulivanh", "Thao", email = "soulivanh.thao@lsce.ipsl.fr", role = c("cre")))
 Description: This package provides the r2d2 function
