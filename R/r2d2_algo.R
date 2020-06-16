@@ -156,7 +156,7 @@ r2d2 <- function(refdata,
     1
   time_bestanalogue <- numeric(length = nsearch)
   dist_bestanalogue <- numeric(length = nsearch)
-  visited_time <-  numeric(length = Ntimes_BC)
+  visited_time <-  numeric(length = Ntimes_REF)
 
   t <-  0
   for (isearch in seq.int(nsearch)) {
@@ -190,6 +190,9 @@ r2d2 <- function(refdata,
 
   return(
     list(
+      ranks_ref = ranks_REF,
+      ranks_bc = ranks_BC,
+      sorted_bc = sorted_BC,
       r2d2_bc = r2d2_bc,
       visited_time = visited_time,
       time_bestanalogue = time_bestanalogue,
