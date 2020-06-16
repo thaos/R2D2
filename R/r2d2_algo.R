@@ -136,11 +136,14 @@ r2d2 <- function(refdata,
 
   # shrink the rank
   if (Ntimes_BC < Ntimes_REF) {
-    ranks_REF <-  round(ranks_REF * Ntimes_BC / Ntimes_REF)
+    ranks_REF <-  round((ranks_REF - 1) * (Ntimes_BC - 1) / (Ntimes_REF - 1)) + 1
     cat("SHRINK 1\n")
   }
   if (Ntimes_BC > Ntimes_REF) {
-    ranks_BC <-  round(ranks_BC * Ntimes_REF / Ntimes_BC)
+    ranks_BC <-  round((ranks_BC - 1) * (Ntimes_REF - 1) / (Ntimes_BC - 1)) + 1
+    ranks_sorted_shrinked <- round(seq.int(0, Ntimes_BC - 1) * (Ntimes_REF - 1) / (Ntimes_BC - 1)) + 1
+    iduplicates <- (c(diff(ranks_sorted_shrinked), 1) == 0)
+    sorted_BC  <- sorted_BC[!iduplicates, ]
     cat("SHRINK 2\n")
   }
 
