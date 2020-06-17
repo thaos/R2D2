@@ -10,5 +10,5 @@
 #'
 #'
 #' @docType package
-#' @name R2D2_package
+#' @name R2D2-package
 NULL

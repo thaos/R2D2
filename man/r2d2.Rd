@@ -33,6 +33,14 @@ The default value is no lag, i.e., \code{lag_search}=0.}
 \value{
 A list with the following elements:
 \itemize{
+  \item ranks_ref A matrix of dimension \code{T_ref x P}
+   with the ranks of \code{refdata}
+  \item ranks_bc1d A matrix of dimension \code{T x P}
+   with the ranks of \code{bc1d}
+  \item sorted_bc1d A matrix of dimension \code{min(T, T_ref) x P} 
+   with the sorted values of \code{bc1d} that are available 
+   for the correction. if \code{T > T_ref} the number of possible value 
+   for correction per variable is shrunk to \code{T_ref} 
   \item r2d2_bc A matrix of dimension \code{T x P} with
   the \code{bc1d} data corrected by the R2D2 bias-correction method
   \item visited_time A vector of length \code{T_ref} with the number of times
