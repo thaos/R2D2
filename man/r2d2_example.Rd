@@ -4,8 +4,7 @@
 \name{r2d2_example}
 \alias{r2d2_example}
 \title{Example data for the r2d2 function}
-\format{
-A list with the following elements:
+\format{A list with the following elements:
 \describe{
   \item{bc1d}{A matrix with 589 rows and 10 columns. It contains data previously bias corrected with a univariate BC method.
   Those 1d-BC data have inter-site and inter-variable dependences that are to be corrected by the r2d2 method.}
@@ -22,8 +21,7 @@ A list with the following elements:
   that have been (i) regridded to the same spatial resolution as the reference dataset
   and then (ii) bias-corrected with the univariate BC method CDFt (Michelangeli et al, 2009).
   The bc1d dataset has been prepared by \href{https://theclimatedatafactory.com/}{The Climate Data Factory}.
-}
-}
+}}
 \source{
 Weedon, G.P., Balsamo, G., Bellouin, N., Gomes, S., Best, M.J. and Viterbo, P., 2014.
 The WFDEI meteorological forcing data set:
